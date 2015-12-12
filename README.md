@@ -22,3 +22,13 @@ Esta aplicacion nos da una idea de lo que se quiere que el estudiante logre hace
 
 # CLASE 1 - 05-DIC-2015
 
+Se tomo como una clase introductoria.
+
+
+# CLASE 2 - 12-DIC-2015
+
+Se inicia por fin el curso con 5 puntas.
+
+
+
+
