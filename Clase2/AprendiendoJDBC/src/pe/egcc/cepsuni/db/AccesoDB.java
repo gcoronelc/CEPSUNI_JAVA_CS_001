@@ -22,7 +22,7 @@ public class AccesoDB {
     try {
       // Parámetros para la conexión
       String driver = "net.sourceforge.jtds.jdbc.Driver";
-      String urlDB = "jdbc:jtds:sqlserver://localhost:1433/EUREKABANK";
+      String urlDB = "jdbc:jtds:sqlserver://192.168.30.42:1433/EUREKABANK";
       String user = "eureka";
       String pass = "admin";
       // Cargar el driver
