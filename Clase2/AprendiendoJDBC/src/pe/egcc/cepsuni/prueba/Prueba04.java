@@ -1,9 +1,7 @@
-/**
- * Clase que ilustra el uso del objeto Statement.
- */
 package pe.egcc.cepsuni.prueba;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import pe.egcc.cepsuni.db.AccesoDB;
 
@@ -15,22 +13,26 @@ import pe.egcc.cepsuni.db.AccesoDB;
  * @date   12/12/2015
  * 
  */
-public class Prueba03 {
+public class Prueba04 {
 
   public static void main(String[] args) {
     Connection cn = null;
     try {
       cn = AccesoDB.getConnection();
-      String sql = "insert into mensaje "
-              + "values('verde','Betty',"
-              + "'Copia bien para que me expliques luego.')";
+      String sql = "select de, para, mensaje from mensaje";
       Statement stm = cn.createStatement();
-      stm.executeUpdate(sql);
+      ResultSet rs = stm.executeQuery(sql);
+      while(rs.next()){
+        System.out.println(rs.getString("de") + " - " 
+                + rs.getString("para") + " - " 
+                + rs.getString("mensaje"));
+      }
+      rs.close();
       stm.close();
-      System.out.println("Proceso ok.");
+      System.out.println("Todo ok.");
     } catch (Exception e) {
       e.printStackTrace();
-    } finally{
+    } finally {
       try {
         cn.close();
       } catch (Exception e) {

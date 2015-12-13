@@ -33,7 +33,12 @@ Puntos tratados
 - Se ha creado la base de datos EUREKABANK para SQL Server
 - Se ha habilitado la conexión remota
 - Se ha probado el driver JTDS
-- Se 
+- Se probado la conexión
+- Se ha creado la clase AccesoDB.java que retorna una conexión.
+- Se ha probado el objeto Statement
+- Se ha probado el objeto ResultSet
+
+
 
 
 
