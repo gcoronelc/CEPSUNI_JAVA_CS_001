@@ -19,9 +19,11 @@ public class Prueba05 {
     Connection cn = null;
     try {
       cn = AccesoDB.getConnection();
-      String sql = "select * from cuenta where chr_cliecodigo=?";
+      String sql = "select * from cuenta "
+              + "where chr_cliecodigo like ?";
       PreparedStatement pstm = cn.prepareStatement(sql);
       pstm.setString(1, "00005");
+      //pstm.setString(1, "%");
       ResultSet rs = pstm.executeQuery();
       while(rs.next()){
         System.out.println("Cuenta: " + rs.getString("chr_cuencodigo"));

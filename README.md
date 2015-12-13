@@ -37,6 +37,7 @@ Puntos tratados
 - Se ha creado la clase AccesoDB.java que retorna una conexión.
 - Se ha probado el objeto Statement
 - Se ha probado el objeto ResultSet
+- Se ha probado el objeto PreparedStatement con un parametro
 
 
 

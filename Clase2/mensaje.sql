@@ -4,3 +4,7 @@ para varchar(30),
 mensaje varchar(500)
 );
 
+select * from mensaje;
+
+
+
