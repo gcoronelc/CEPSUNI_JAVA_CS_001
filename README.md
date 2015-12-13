@@ -27,8 +27,13 @@ Se tomo como una clase introductoria.
 
 # CLASE 2 - 12-DIC-2015
 
-Se inicia por fin el curso con 5 puntas.
+Puntos tratados
 
+- Se inicia por fin el curso con 5 puntas.
+- Se ha creado la base de datos EUREKABANK para SQL Server
+- Se ha habilitado la conexión remota
+- Se ha probado el driver JTDS
+- Se 
 
 
 
