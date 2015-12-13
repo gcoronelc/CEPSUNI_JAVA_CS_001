@@ -3,6 +3,8 @@ Repositorio creado para el curso JAVA CLIENTE-SERVIDOR dictado en el CEPS-UNI en
 
 # SITIOS RECOMENDADOS
 
+http://gcoronelc.blogspot.pe/2013/06/resumen-seminario-java-cliente-servidor.html
+
 http://www.librosdigitales.net/
 
 http://gcoronelc.blogspot.pe/
