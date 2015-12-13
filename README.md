@@ -39,6 +39,15 @@ Puntos tratados
 - Se ha probado el objeto ResultSet
 - Se ha probado el objeto PreparedStatement con un parametro
 
+Enlaces
+
+http://www.peoug.org/otntour2013/
+
+http://www.peoug.org/otntour2014/
+
+http://www.peoug.org/otntour2015/
+
+http://www.jtech.ua.es/j2ee/publico/lja-2012-13/sesion07-apuntes.html
 
 
 
