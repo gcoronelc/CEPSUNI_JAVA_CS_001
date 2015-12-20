@@ -16,6 +16,26 @@
     vch_emplusuario usuario
   </sql>
   
+  <!-- Filtro de empleados -->
+  <sql id="filtro_empleados">
+    <where>
+      <if test="codigo != null">
+				AND CHR_EMPLCODIGO = #{codigo}
+			</if>
+      <if test="paterno != null">
+				AND VCH_EMPLPATERNO LIKE #{paterno} + '%'
+			</if>
+      <if test="materno != null">
+				AND VCH_EMPLMATERNO LIKE #{materno} + '%'
+			</if>
+      <if test="nombre != null">
+				AND VCH_EMPLNOMBRE LIKE #{nombre} + '%'
+			</if>
+    </where>
+  </sql>
+  
+  
+  
   <!-- Consulta de todos los empleados -->
   <select id="getTodosEmpleados" resultType="EmpleadoBean">
     select
@@ -28,6 +48,7 @@
     select
       <include refid="campos_empleado"/>
     from empleado
+    <include refid="filtro_empleados"/>
   </select>
   
 </mapper>
