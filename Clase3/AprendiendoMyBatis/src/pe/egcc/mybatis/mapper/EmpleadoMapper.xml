@@ -5,17 +5,28 @@
 
 <mapper namespace="pe.egcc.mybatis.espec.EmpleadoMapper">
   
+  <!-- Campos de la tabla empleado -->
+  <sql id="campos_empleado">
+    chr_emplcodigo codigo,
+    vch_emplpaterno paterno,
+    vch_emplmaterno materno,
+    vch_emplnombre nombre,
+    vch_emplciudad ciudad,
+    vch_empldireccion direccion,
+    vch_emplusuario usuario
+  </sql>
+  
   <!-- Consulta de todos los empleados -->
-  <select id="getTodosEmpleados" 
-          resultType="EmpleadoBean">
+  <select id="getTodosEmpleados" resultType="EmpleadoBean">
     select
-      chr_emplcodigo codigo,
-      vch_emplpaterno paterno,
-      vch_emplmaterno materno,
-      vch_emplnombre nombre,
-      vch_emplciudad ciudad,
-      vch_empldireccion direccion,
-      vch_emplusuario usuario
+      <include refid="campos_empleado"/>
+    from empleado
+  </select>
+  
+  <!-- Consulta de todos los empleados -->
+  <select id="getTraerEmpleados" parameterType="EmpleadoBean" resultType="EmpleadoBean">
+    select
+      <include refid="campos_empleado"/>
     from empleado
   </select>
   

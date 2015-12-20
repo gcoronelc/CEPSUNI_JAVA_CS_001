@@ -16,4 +16,8 @@ public interface EmpleadoMapper {
   
   List<EmpleadoBean> getTodosEmpleados();
   
+  List<EmpleadoBean> getTraerEmpleados(EmpleadoBean empleadoBean);
+  
+  
+  
 }
