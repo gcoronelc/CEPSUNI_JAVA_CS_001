@@ -7,16 +7,16 @@ import pe.egcc.uni.eureka.util.Session;
 /**
  *
  * @author Eric Gustavo Coronel Castillo
- * @email  gcoronelc@gmail.com
- * @blog   gcoronelc.blogspot.com
- * @date   26/12/2015
- * 
+ * @email gcoronelc@gmail.com
+ * @blog gcoronelc.blogspot.com
+ * @date 26/12/2015
+ *
  */
 public class LogonController {
 
   public void validar(String usuario, String clave) {
     LogonService service = new LogonService();
-    EmpleadoModel model = service.validar(usuario,clave);
+    EmpleadoModel model = service.validar(usuario, clave);
     Session.put("usuario", model);
   }
 
