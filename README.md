@@ -54,5 +54,15 @@ http://www.peoug.org/otntour2015/
 http://www.jtech.ua.es/j2ee/publico/lja-2012-13/sesion07-apuntes.html
 
 
+# CLASE 3 - 19-DIC-2015
+
+- MyBatis
+- Se inicia el desarrollo del proyecto.
+
+
+# CLASE 4 - 26-DIC-2015
+
+- Se continua el desarrollo del proyecto.
+
 
 
