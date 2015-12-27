@@ -3,6 +3,7 @@ package pe.egcc.uni.eureka.prueba;
 import pe.egcc.uni.eureka.dao.espec.CrudEmplEspec;
 import pe.egcc.uni.eureka.dao.impl.CrudEmplImpl;
 import pe.egcc.uni.eureka.model.EmpleadoModel;
+import pe.egcc.uni.eureka.service.LogonService;
 
 /**
  *
@@ -15,9 +16,9 @@ import pe.egcc.uni.eureka.model.EmpleadoModel;
 public class Prueba01 {
 
   public static void main(String[] args) {
-    CrudEmplEspec crudEmpl = new CrudEmplImpl();
+    LogonService service = new LogonService();
     EmpleadoModel model;
-    model = crudEmpl.validar("cromero", "chicho");
+    model = service.validar("cromero", "chicho");
     System.out.println("Nombre: " + model.getNombre());
   }
 }

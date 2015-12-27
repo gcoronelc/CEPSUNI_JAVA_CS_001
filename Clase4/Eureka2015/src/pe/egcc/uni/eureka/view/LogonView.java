@@ -1,5 +1,8 @@
 package pe.egcc.uni.eureka.view;
 
+import pe.egcc.uni.eureka.controller.LogonController;
+import pe.egcc.uni.eureka.util.Mensajes;
+
 /**
  *
  * @author Eric Gustavo Coronel Castillo
@@ -40,6 +43,11 @@ public class LogonView extends javax.swing.JDialog {
     jLabel2.setText("Clave:");
 
     btnIngresar.setText("Ingresar");
+    btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnIngresarActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -79,6 +87,22 @@ public class LogonView extends javax.swing.JDialog {
 
     pack();
   }// </editor-fold>//GEN-END:initComponents
+
+  private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+    try {
+      // Datos
+      String usuario = txtUsuario.getText();
+      String clave = String.valueOf(txtClave.getPassword());
+      // Validar
+      LogonController controller = new LogonController();
+      controller.validar(usuario,clave);
+      Mensajes.showInfo(this, "Bienvenido.");
+      this.dispose();
+      MainView.main(null);
+    } catch (Exception e) {
+      Mensajes.showError(this, e.getMessage());
+    }
+  }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**
      * @param args the command line arguments

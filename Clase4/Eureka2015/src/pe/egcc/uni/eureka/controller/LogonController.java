@@ -1,5 +1,9 @@
 package pe.egcc.uni.eureka.controller;
 
+import pe.egcc.uni.eureka.model.EmpleadoModel;
+import pe.egcc.uni.eureka.service.LogonService;
+import pe.egcc.uni.eureka.util.Session;
+
 /**
  *
  * @author Eric Gustavo Coronel Castillo
@@ -9,5 +13,11 @@ package pe.egcc.uni.eureka.controller;
  * 
  */
 public class LogonController {
+
+  public void validar(String usuario, String clave) {
+    LogonService service = new LogonService();
+    EmpleadoModel model = service.validar(usuario,clave);
+    Session.put("usuario", model);
+  }
 
 }
