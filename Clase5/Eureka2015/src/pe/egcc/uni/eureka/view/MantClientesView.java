@@ -17,6 +17,7 @@ import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import pe.egcc.uni.eureka.controller.ClienteController;
 import pe.egcc.uni.eureka.model.ClienteModel;
+import pe.egcc.uni.eureka.util.EurekaUtil;
 import pe.egcc.uni.eureka.util.Mensajes;
 
 /**
@@ -74,12 +75,27 @@ public class MantClientesView extends javax.swing.JInternalFrame {
 
     btnNuevo.setText("Nuevo");
     btnNuevo.setToolTipText("Registrar nuevo cliente.");
+    btnNuevo.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnNuevoActionPerformed(evt);
+      }
+    });
 
     btnEditar.setText("Editar");
     btnEditar.setToolTipText("Editar cliente actual.");
+    btnEditar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEditarActionPerformed(evt);
+      }
+    });
 
     btnEliminar.setText("Eliminar");
     btnEliminar.setToolTipText("Eliminar cliente actual.");
+    btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEliminarActionPerformed(evt);
+      }
+    });
 
     btnExcel.setText("Excel");
     btnExcel.setToolTipText("Exportar lista a excel.");
@@ -319,6 +335,37 @@ public class MantClientesView extends javax.swing.JInternalFrame {
       Mensajes.showError(this, "No se tiene permiso para crear el archivo.");
     }
   }//GEN-LAST:event_btnExcel2ActionPerformed
+
+  private void btnNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoActionPerformed
+    EditClienteView view = new EditClienteView(null, true);
+    view.setAccion(EurekaUtil.CRUD_NUEVO);
+    ClienteModel clienteModel = new ClienteModel();
+    clienteModel.setCodigo("NUEVO");
+    view.setClienteModel(clienteModel);
+    view.setVisible(true);
+  }//GEN-LAST:event_btnNuevoActionPerformed
+
+  private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+    if(tblData.getSelectedRow() == -1){
+      return;
+    }
+    ClienteModel clienteModel = lista.get(tblData.getSelectedRow());
+    EditClienteView view = new EditClienteView(null, true);
+    view.setAccion(EurekaUtil.CRUD_EDITAR);
+    view.setClienteModel(clienteModel);
+    view.setVisible(true);
+  }//GEN-LAST:event_btnEditarActionPerformed
+
+  private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    if(tblData.getSelectedRow() == -1){
+      return;
+    }
+    ClienteModel clienteModel = lista.get(tblData.getSelectedRow());
+    EditClienteView view = new EditClienteView(null, true);
+    view.setAccion(EurekaUtil.CRUD_ELIMINAR);
+    view.setClienteModel(clienteModel);
+    view.setVisible(true);
+  }//GEN-LAST:event_btnEliminarActionPerformed
 
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
