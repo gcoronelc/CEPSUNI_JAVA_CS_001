@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +20,7 @@ import pe.egcc.uni.eureka.controller.ClienteController;
 import pe.egcc.uni.eureka.model.ClienteModel;
 import pe.egcc.uni.eureka.util.EurekaUtil;
 import pe.egcc.uni.eureka.util.Mensajes;
+import pe.egcc.uni.eureka.util.Session;
 
 /**
  *
@@ -343,28 +345,55 @@ public class MantClientesView extends javax.swing.JInternalFrame {
     clienteModel.setCodigo("NUEVO");
     view.setClienteModel(clienteModel);
     view.setVisible(true);
+    if(Session.get("clienteModel") == null){
+      return;
+    }
+    clienteModel = (ClienteModel) Session.get("clienteModel");
+    if(lista == null){
+      lista = new ArrayList<>();
+    }
+    lista.add(0, clienteModel);
+    mostrarLista(lista);
   }//GEN-LAST:event_btnNuevoActionPerformed
 
   private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-    if(tblData.getSelectedRow() == -1){
+    int fila = tblData.getSelectedRow();
+    if(fila == -1){
       return;
     }
-    ClienteModel clienteModel = lista.get(tblData.getSelectedRow());
+    ClienteModel clienteModel = lista.get(fila);
     EditClienteView view = new EditClienteView(null, true);
     view.setAccion(EurekaUtil.CRUD_EDITAR);
     view.setClienteModel(clienteModel);
     view.setVisible(true);
+    if(Session.get("clienteModel") == null){
+      return;
+    }
+    clienteModel = (ClienteModel) Session.get("clienteModel");
+    lista.set(fila, clienteModel);
+    tblData.setValueAt(clienteModel.getPaterno(), fila, 1);
+    tblData.setValueAt(clienteModel.getMaterno(), fila, 2);
+    tblData.setValueAt(clienteModel.getNombre(), fila, 3);
   }//GEN-LAST:event_btnEditarActionPerformed
 
   private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-    if(tblData.getSelectedRow() == -1){
+    int fila = tblData.getSelectedRow();
+    if(fila == -1){
       return;
     }
-    ClienteModel clienteModel = lista.get(tblData.getSelectedRow());
+    ClienteModel clienteModel = lista.get(fila);
     EditClienteView view = new EditClienteView(null, true);
     view.setAccion(EurekaUtil.CRUD_ELIMINAR);
     view.setClienteModel(clienteModel);
     view.setVisible(true);
+    if(Session.get("clienteModel") == null){
+      return;
+    }
+    lista.remove(fila);
+    mostrarLista(lista);
+    if(fila < lista.size()){
+      tblData.getSelectionModel().setSelectionInterval(0, fila);
+    }
   }//GEN-LAST:event_btnEliminarActionPerformed
 
 

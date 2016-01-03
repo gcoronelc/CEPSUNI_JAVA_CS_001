@@ -29,4 +29,16 @@ public class ClienteService {
     return crudCliente.leerPorNombre(model);
   }
 
+  public void insertar(ClienteModel model) {
+    crudCliente.insertar(model);
+  }
+
+  public void modificar(ClienteModel model) {
+    crudCliente.actualizar(model);
+  }
+
+  public void eliminar(ClienteModel model) {
+    
+  }
+
 }
