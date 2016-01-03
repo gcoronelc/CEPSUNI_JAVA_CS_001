@@ -1,6 +1,7 @@
 package pe.egcc.uni.eureka.view;
 
 import pe.egcc.uni.eureka.model.ClienteModel;
+import pe.egcc.uni.eureka.util.EurekaUtil;
 
 /**
  *
@@ -21,11 +22,24 @@ public class EditClienteView extends javax.swing.JDialog {
   public EditClienteView(java.awt.Frame parent, boolean modal) {
     super(parent, modal);
     initComponents();
+    this.setLocationRelativeTo(null);
   }
 
   public void setAccion(String accion) {
     this.accion = accion;
     this.setTitle(accion + " CLIENTE");
+    habilitarControles();
+  }
+  
+  private void habilitarControles(){
+    txtPaterno.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtMaterno.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtNombre.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtDNI.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtCiudad.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtDireccion.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtTelefono.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
+    txtEmail.setEnabled(!accion.equals(EurekaUtil.CRUD_ELIMINAR));
   }
 
   public void setClienteModel(ClienteModel clienteModel) {
