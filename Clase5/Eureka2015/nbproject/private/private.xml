@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/service/ClienteService.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/db/AccesoDB.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/util/EurekaUtil.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/util/Session.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/model/ClienteModel.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/view/MantClientesView.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/controller/ClienteController.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/dao/impl/CrudClienteImpl.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/view/LogonView.java</file>
-            <file>file:/G:/EGCC/JAVA_CS_CEPSUNI_DIC_2015/Clase5/Eureka2015/src/pe/egcc/uni/eureka/view/EditClienteView.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
