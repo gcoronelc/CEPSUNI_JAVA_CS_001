@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteMovimientos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="14bcbabf-0a28-4ea7-8394-daf87994e1ed">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CUENTA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     cliecodigo,
+     cliepaterno,
+     cliematerno,
+     clienombre,
+     cuencodigo,
+     cuensaldo,
+     movinumero,
+     movifecha,
+     moviimporte,
+     tiponombre,
+     tipoaccion,
+     monenombre
+FROM
+     v_movimiento
+where
+     cuencodigo=$P{CUENTA}]]>
+	</queryString>
+	<field name="cliecodigo" class="java.lang.String"/>
+	<field name="cliepaterno" class="java.lang.String"/>
+	<field name="cliematerno" class="java.lang.String"/>
+	<field name="clienombre" class="java.lang.String"/>
+	<field name="cuencodigo" class="java.lang.String"/>
+	<field name="cuensaldo" class="java.math.BigDecimal"/>
+	<field name="movinumero" class="java.lang.Integer"/>
+	<field name="movifecha" class="java.sql.Timestamp"/>
+	<field name="moviimporte" class="java.math.BigDecimal"/>
+	<field name="tiponombre" class="java.lang.String"/>
+	<field name="tipoaccion" class="java.lang.String"/>
+	<field name="monenombre" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="144" splitType="Stretch">
+			<textField>
+				<reportElement x="139" y="9" width="100" height="20" uuid="70b22ef6-7524-46d5-ad79-f3f922068fd3"/>
+				<textFieldExpression><![CDATA[$F{cuencodigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="9" width="100" height="20" uuid="757bd176-5ffb-4eca-a977-7afb97e2e4f1"/>
+				<text><![CDATA[Cuenta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="41" width="100" height="20" uuid="18070516-f9bd-4a54-b3cb-2df16f23fee4"/>
+				<text><![CDATA[Cliente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="104" width="100" height="20" uuid="b44e92b9-05dc-4a68-9177-62d66f39a0f9"/>
+				<text><![CDATA[Saldo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="73" width="100" height="20" uuid="85159ad0-07cb-41e3-9ab7-e039e0678ace"/>
+				<text><![CDATA[Moneda:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="139" y="73" width="100" height="20" uuid="03f77a31-f24c-4581-a4c8-eafbb7b98096"/>
+				<textFieldExpression><![CDATA[$F{monenombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="104" width="100" height="20" uuid="03ef42c2-4ba0-423d-b9b2-70200190507f"/>
+				<textFieldExpression><![CDATA[$F{cuensaldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="bdca37c6-bc00-4f8e-b143-32204c33d2f0"/>
+				<text><![CDATA[tiponombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="ec0a6b2f-3528-474a-a068-efa9aea1a168"/>
+				<text><![CDATA[movifecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="93e28a91-153c-4bc4-96dd-2f28c5cbee17"/>
+				<text><![CDATA[movinumero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="e55df3f3-de9b-4d78-8cb1-0c0c498f89f0"/>
+				<text><![CDATA[tipoaccion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="e842967a-7dd9-4593-95dc-958984b6ee74"/>
+				<text><![CDATA[moviimporte]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="b5655f7c-02ee-4d18-9d65-14ba3b8fd214"/>
+				<textFieldExpression><![CDATA[$F{tiponombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="799913a3-46d9-4cda-a56f-9501b17f909c"/>
+				<textFieldExpression><![CDATA[$F{movifecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="474fb77f-f739-4ddb-b86c-069959667d6e"/>
+				<textFieldExpression><![CDATA[$F{movinumero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="5f53dfc2-83ab-4037-9b16-65db2704b393"/>
+				<textFieldExpression><![CDATA[$F{tipoaccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="1d979ee3-54e1-4774-9e90-be781785ef95"/>
+				<textFieldExpression><![CDATA[$F{moviimporte}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -39,6 +39,7 @@ public class MainView extends javax.swing.JFrame {
     menuTablasClientes = new javax.swing.JMenuItem();
     menuConsultas = new javax.swing.JMenu();
     menuReportes = new javax.swing.JMenu();
+    menuReportesMovimientos = new javax.swing.JMenuItem();
     menuUtil = new javax.swing.JMenu();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,6 +78,15 @@ public class MainView extends javax.swing.JFrame {
     menuBar.add(menuConsultas);
 
     menuReportes.setText("Reportes");
+
+    menuReportesMovimientos.setText("Movimientos");
+    menuReportesMovimientos.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuReportesMovimientosActionPerformed(evt);
+      }
+    });
+    menuReportes.add(menuReportesMovimientos);
+
     menuBar.add(menuReportes);
 
     menuUtil.setText("Util");
@@ -105,6 +115,10 @@ public class MainView extends javax.swing.JFrame {
   private void menuTablasClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTablasClientesActionPerformed
     cargarVentaInterna(MantClientesView.class);
   }//GEN-LAST:event_menuTablasClientesActionPerformed
+
+  private void menuReportesMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportesMovimientosActionPerformed
+    cargarVentaInterna(ReporteMovimientos.class);
+  }//GEN-LAST:event_menuReportesMovimientosActionPerformed
 
   /**
    * @param args the command line arguments
@@ -149,6 +163,7 @@ public class MainView extends javax.swing.JFrame {
   private javax.swing.JMenu menuConsultas;
   private javax.swing.JMenu menuProcesos;
   private javax.swing.JMenu menuReportes;
+  private javax.swing.JMenuItem menuReportesMovimientos;
   private javax.swing.JMenu menuTablas;
   private javax.swing.JMenuItem menuTablasClientes;
   private javax.swing.JMenu menuUtil;
